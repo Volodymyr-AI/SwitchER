@@ -35,7 +35,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Scanning" FontSize="20" Height="52" HorizontalAlignment="Right" Margin="12,30,56,0" Name="button2" VerticalAlignment="Top" Width="153" Click="Button2_Click" />
+        
+        <Button Content="Scanning" FontSize="20" Height="52" HorizontalAlignment="Left" Margin="12,30,56,0" Name="button2" VerticalAlignment="Top" Width="153" Click="Button2_Click" />
         <Grid Background="#FF656565"  HorizontalAlignment="Right" Margin="0,84,2,37" Name="rectangle1" Width="208">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="110*"/>
@@ -58,6 +59,5 @@
         </Grid>
         <Label Content="FewSoft" Height="28" Name="label1" VerticalAlignment="Bottom" Background="#FF656565" Foreground="White" Cursor="Hand" />
         <Label Background="#3399FF" Content="FewSoft" Foreground="White" Height="28" Name="label7" VerticalAlignment="Top" HorizontalContentAlignment="Right" />
-
     </Grid>
 </Window>
