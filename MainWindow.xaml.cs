@@ -125,21 +125,28 @@ namespace SwitchER
                 HostName = entry.HostName;
 
                 //Get Mac-address
-                IPAddress dst = IPAddress.Parse(textName);
-
-                byte[] MacAddr = new byte[6];
-                uint MacAddrLen = (uint)MacAddr.Length;
-
-                if (SendARP(BitConverter.ToInt32(dst.GetAddressBytes(), 0), 0, MacAddr, ref MacAddrLen) != 0)
+                try
                 {
-                    throw new InvalidOperationException("SendARP failed.");
+                    IPAddress dst = IPAddress.Parse(textName);
+
+                    byte[] MacAddr = new byte[6];
+                    uint MacAddrLen = (uint)MacAddr.Length;
+
+                    if (SendARP(BitConverter.ToInt32(dst.GetAddressBytes(), 0), 0, MacAddr, ref MacAddrLen) != 0)
+                    {
+                        throw new InvalidOperationException("SendARP failed.");
+                    }
+
+                    string[] str = new string[(int)MacAddrLen];
+                    for (int i = 0; i < MacAddrLen; i++)
+                        str[i] = MacAddr[i].ToString("x2");
+
+                    MacAddress = string.Join(":", str);
                 }
-
-                string[] str = new string[(int)MacAddrLen];
-                for (int i = 0; i < MacAddrLen; i++)
-                    str[i] = MacAddr[i].ToString("x2");
-
-                MacAddress = string.Join(":", str);
+                catch(Exception e)
+                {
+                    Console.WriteLine("Did not find any mac address");
+                }
 
                 //If everything fine we add info into ListView_1
                 Dispatcher.Invoke(new Action(() =>
