@@ -35,8 +35,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        
-        <Button Content="Scanning" FontSize="20" Height="52" HorizontalAlignment="Left" Margin="12,30,56,0" Name="button2" VerticalAlignment="Top" Width="153" Click="Button2_Click" />
+
+        <Button Content="Scan network" FontSize="20" Height="52" HorizontalAlignment="Left" Margin="12,30,56,0" Name="button2" VerticalAlignment="Top" Width="153" Click="Button2_Click" />
         <Grid Background="#FF656565"  HorizontalAlignment="Right" Margin="0,84,2,37" Name="rectangle1" Width="208">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="110*"/>
@@ -53,7 +53,12 @@
             <Button Content="Switch On" FontSize="20" Height="50" HorizontalAlignment="Left" Margin="16,0,0,10" Name="button3" VerticalAlignment="Bottom" Width="169" Click="button3_Click" Grid.ColumnSpan="4" />
             <GroupBox Foreground="white" Header="User List" Height="63" HorizontalAlignment="Left" Margin="5,14,0,0" Name="groupBox1" VerticalAlignment="Top" Width="200" Grid.ColumnSpan="4">
                 <Grid>
-                    <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,6,14,0" Name="comboBox1" VerticalAlignment="Top" Width="168" SelectionChanged="comboBox1_SelectionChanged" />
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="32*"/>
+                        <ColumnDefinition Width="115*"/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,6,14,0" Name="comboBox1" VerticalAlignment="Top" Width="168" SelectionChanged="comboBox1_SelectionChanged" Grid.ColumnSpan="3" />
                 </Grid>
             </GroupBox>
         </Grid>

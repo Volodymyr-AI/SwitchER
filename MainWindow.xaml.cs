@@ -104,7 +104,7 @@ namespace SwitchER
             int magic_packet = client.Send(bytes, 1024); //Magic packet — це спеціальна послідовність байтів, яку для нормального проходження по локальних мережах можна вкласти в пакети UDP або IPX.
 
         }
-
+        //get ip, name and mac
         private void GetInform(string textName)
         {
             string IP_Address = "";
@@ -170,7 +170,7 @@ namespace SwitchER
             newProcess.CreateNoWindow = true;
             Process procCommand = Process.Start(newProcess);
             StreamReader srIncome = procCommand.StandardOutput;
-            //  MessageBox.Show(srIncoming.ReadToEnd());
+           
             string output;
             while ((output = srIncome.ReadLine()) != null)
             {
